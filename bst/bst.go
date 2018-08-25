@@ -98,6 +98,6 @@ func main() {
 	fmt.Println()
 	fmt.Println(GetMin(root).data)
 	fmt.Println(GetMax(root).data)
-	fmt.Println(IsPresent(root, 20))
+	fmt.Println(IsPresent(root, 19))
 	fmt.Println(IsPresent(root, 78))
 }
