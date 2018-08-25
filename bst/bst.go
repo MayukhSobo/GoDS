@@ -69,6 +69,19 @@ func GetMax(root *Node) *Node {
 	return GetMax(root.right)
 }
 
+// IsPresent -- If an element is present in a BST or not
+func IsPresent(root *Node, elem int) bool {
+	if root == nil {
+		return false
+	}
+	if elem == root.data {
+		return true
+	} else if elem < root.data {
+		return IsPresent(root.left, elem)
+	}
+	return IsPresent(root.right, elem)
+}
+
 func main() {
 	var root *Node
 	nums := []int{
@@ -85,4 +98,6 @@ func main() {
 	fmt.Println()
 	fmt.Println(GetMin(root).data)
 	fmt.Println(GetMax(root).data)
+	fmt.Println(IsPresent(root, 20))
+	fmt.Println(IsPresent(root, 78))
 }
